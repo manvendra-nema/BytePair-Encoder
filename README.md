@@ -1,29 +1,24 @@
-# BytePair Tokenizer Project
+# 🔠 BytePair Tokenizer Project
 
 ## Overview
 
-This project involves creating a tokenizer based on the BytePair Encoding (BPE) algorithm from scratch. The tokenizer is implemented in Python without using any external libraries like NLTK, HuggingFace, Spacy, or TextBlob. The primary goal is to develop a `Tokenizer` class with the following functionalities:
+Create a tokenizer using the BytePair Encoding (BPE) algorithm from scratch in Python. This project avoids external libraries like NLTK, HuggingFace, Spacy, or TextBlob. The primary goal is to develop a `Tokenizer` class with these functionalities:
 
-- **Learning the vocabulary and split rules** based on a given corpus and a specified number of merges.
-- **Tokenizing a given input sample** based on the learned rules.
+- Learn vocabulary and split rules from a corpus with a specified number of merges.
+- Tokenize input samples based on learned rules.
 
-## Files
+## 📂 Files
 
-The project includes the following files:
+- `tokenizer.py`: Implements the `Tokenizer` class.
+- `vocabulary.txt`: Lists all possible tokens after the specified number of merges.
+- `merge_rules.txt`: Lists all learned merge rules after vocabulary learning.
+- `tokenized_samples.txt`: Contains split tokens after tokenizing test samples.
 
-- `tokenizer.py`: Contains the implementation of the `Tokenizer` class.
-- `vocabulary.txt`: A file listing all possible tokens in the vocabulary after a specified number of merges.
-- `merge_rules.txt`: A file listing all the merge rules learned after learning the vocabulary for the specified number of merges.
-- `tokenized_samples.txt`: A file containing the split tokens after tokenizing a set of test samples.
-
-## Tokenizer Class
+## 🏷️ Tokenizer Class
 
 ### Methods
 
-#### `learn_vocabulary(corpus: List[str], num_merges: int) -> None`
+- **`learn_vocabulary(corpus: List[str], num_merges: int) -> None`**: Learns split rules and frequencies from the corpus based on the number of merges, updating the vocabulary and merge rules.
+- **`tokenize(sample: str) -> List[str]`**: Tokenizes the input sample based on learned split rules and returns a list of tokens.
 
-This method learns the split rules and frequencies from the given corpus based on the specified number of merges. It updates the vocabulary and merge rules accordingly.
-
-#### `tokenize(sample: str) -> List[str]`
-
-This method tokenizes the given input sample based on the learned split rules and returns the list of tokens.
+---
